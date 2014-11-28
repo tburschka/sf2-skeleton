@@ -1,0 +1,16 @@
+Core\Bundle\CoreBundle\Entity\Activity:
+    type: entity
+    table: activity
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+            options:
+                unsigned: true
+    fields:
+        name:
+            type: string
+            length: 100
+        startedAt:
+            type: datetime
+            column: started_at

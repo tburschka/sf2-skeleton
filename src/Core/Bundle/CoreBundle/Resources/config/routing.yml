@@ -1,0 +1,7 @@
+_index:
+    path:     /
+    defaults: { _controller:CoreBundle:Index:index }
+
+_admin:
+    path:     /admin/
+    defaults: { _controller:CoreBundle:Index:index }

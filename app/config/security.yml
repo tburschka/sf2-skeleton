@@ -1,0 +1,26 @@
+security:
+    providers:
+        in_memory:
+            memory:
+                users:
+                    sf: { password: skeletion, roles: 'ROLE_USER' }
+                    admin: { password: admin, roles: 'ROLE_ADMIN' }
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        sf2_skeleton:
+            pattern: ^/
+            anonymous: ~
+            http_basic:
+                realm: "HTTP AUTH"
+        default:
+            anonymous: ~
+
+    access_control:
+        - { path: ^/admin/, roles: ROLE_ADMIN }
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
